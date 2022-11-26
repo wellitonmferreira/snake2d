@@ -35,6 +35,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject panelGameOver;
     [SerializeField] private GameObject panelTitle;
 
+    [SerializeField] private Animator animator;
+
     void Start()
     {
         StartCoroutine("MoveSnake");
@@ -75,18 +77,22 @@ public class GameController : MonoBehaviour
         {
             case Direction.LEFT:
                 nextPos = Vector3.left;
+                animator.Play("Walk_Left");
                 break;
 
             case Direction.RIGHT:
                 nextPos = Vector3.right;
+                animator.Play("Walk_Right");
                 break;
 
             case Direction.UP:
                 nextPos = Vector3.up;
+                animator.Play("Walk_Up");
                 break;
 
             case Direction.DOWN:
                 nextPos = Vector3.down;
+                animator.Play("Walk_Down");
                 break;
         }
 
